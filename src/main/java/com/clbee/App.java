@@ -1,5 +1,6 @@
 package com.clbee;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -34,6 +35,7 @@ public class App
 
     public static void main(String[] args) throws IOException {
 
+        float IMAGE_SCALE = (float) 0.5;
         if (args.length > 0) {
             Path myPath = Paths.get(args[0]);
             List<Path> paths = walk(myPath);
@@ -43,7 +45,7 @@ public class App
                 if (Files.isRegularFile(path)) {
                     Optional<String> xml = getExtension(path.toString());
                     if (xml.isPresent() && "svg".equals(xml.get())) {
-                        Converter.getImage(path);
+                        Converter.reduceSize(path, IMAGE_SCALE,2);
                     }
                 }
             });
