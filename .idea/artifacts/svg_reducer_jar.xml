@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="svg-reducer:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/svg_reducer_jar</output-path>
-    <root id="archive" name="svg-reducer.jar">
-      <element id="module-output" name="svg-reducer" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.7/commons-io-2.7.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
