@@ -271,11 +271,13 @@ public class Converter {
             BufferedImage image = pdfRenderer.renderImageWithDPI(pageNo, dpi, ImageType.RGB);
 
             int real_dpi = dpi;
+            float real_quality = quality;
             if (pageSize > bigSize) {
                 real_dpi += dpi >> 2;
+                real_quality = 1.0f;
             }
 
-            saveBufferedImage(image, new File(targetFilename), real_dpi, quality);
+            saveBufferedImage(image, new File(targetFilename), real_dpi, real_quality);
         }
         System.out.println("\nDone");
         document.close();
